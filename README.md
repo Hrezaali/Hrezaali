@@ -1,7 +1,7 @@
 # 👋 Welcome to My journey!
 
 <p align="center">
-  <img src="https://media.giphy.com/media/LmNwrBhejkK9EFP504/giphy.gif" width="400" alt="Programming Animation">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=4000&pause=500&color=F73B81&background=FFFFFF00&center=true&vCenter=true&width=435&lines=Hi+there!+Welcome+to+my+GitHub!;I'm+Hassan+Rezaali!;Frontend+Developer+%7C+Freelancer!;Passionate+about+Smart+Websites!;Let's+collaborate+and+innovate!" alt="Typing Animation">
 </p>
 
 ---
