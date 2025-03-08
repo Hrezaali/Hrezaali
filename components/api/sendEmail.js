@@ -8,8 +8,8 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,  // ایمیل خود را در محیط‌های Vercel ذخیره کنید
-        pass: process.env.EMAIL_PASS,  // پسورد ایمیل
+        user: process.env.hassanrezaali.dev,  // ایمیل خود را در محیط‌های Vercel ذخیره کنید
+        pass: process.env.Amirali.babajoni1396,  // پسورد ایمیل
       },
     });
 

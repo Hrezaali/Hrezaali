@@ -1,20 +1,3 @@
-// import ParticlesBackground from "../components/ParticlesBackground";
-
-// export default function Home() {
-//   return (
-//     <>
-//       {/* پس‌زمینه ذرات */}
-//       <div className="absolute inset-0 z-0">
-//         <ParticlesBackground />
-//       </div>
-
-//       {/* محتوای اصلی */}
-//       <div className="relative z-10 text-white text-center p-10">
-//         Hi
-//       </div>
-//     </>
-//   );
-// }
 import Introduce from '../components/Introduce/page';
 import ProfilePicture from "@/components/ProfilePicture";
 import Introduce2 from "@/components/Introduce2/page";
