@@ -8,7 +8,7 @@ import {
   NavbarItem,
   Link,
 } from "@heroui/react";
-import { Sun, Moon } from "lucide-react";
+import { Sun, Moon, Menu, X } from "lucide-react";
 
 export const AcmeLogo = () => {
   return (
@@ -25,9 +25,9 @@ export const AcmeLogo = () => {
 
 export default function AppNavbar() {
   const [darkMode, setDarkMode] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    // بررسی تم ذخیره‌شده در لوکال‌استوریج
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme === "dark") {
       setDarkMode(true);
@@ -43,47 +43,44 @@ export default function AppNavbar() {
   };
 
   return (
-    <Navbar isBordered className="bg-[rgba(0,0,0,0.1)] text-white">
+    <Navbar className="fixed top-0 left-0 w-full bg-[rgba(0,0,0,0.8)] text-white z-50">
       <NavbarContent justify="start">
-        <NavbarBrand className="mr-4">
+        <NavbarBrand className="mr-4 flex items-center">
           <AcmeLogo />
-          <p className="hidden sm:block font-bold text-white">Hassan Rezaali</p>
+          <p className="hidden sm:block font-bold text-white ml-3">Hassan Rezaali</p>
         </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-5">
-          <NavbarItem>
-            <Link className="text-white" href="#">Home</Link>
+      </NavbarContent>
+
+      {/* دکمه همبرگری در موبایل */}
+      <button className="sm:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* لینک‌های منو در حالت دسکتاپ */}
+      <NavbarContent className="hidden sm:flex gap-5">
+        {["Home", "About", "Services", "Skills", "Projects", "Blog", "Certificates", "Contact"].map((item, index) => (
+          <NavbarItem key={index}>
+            <Link className="text-white hover:text-blue-500 transition-all duration-300" href={`#${item.toLowerCase()}`}>{item}</Link>
           </NavbarItem>
-          <NavbarItem>
-            <Link className="text-white" href="#about">About</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link className="text-white" href="#services">Services</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link className="text-white" href="#skills">Skills</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link className="text-white" href="#projects">Projects</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link className="text-white" href="#blog">Blog</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link className="text-white" href="#certificates">Certificates</Link>
-          </NavbarItem>
-          <NavbarItem>
-            <Link className="text-white" href="#contact">Contact</Link>
-          </NavbarItem>
-        </NavbarContent>
+        ))}
       </NavbarContent>
 
       {/* دکمه تغییر تم */}
       <button
         onClick={toggleTheme}
-        className="p-2 rounded-full bg-gray-800 dark:bg-gray-200 text-white dark:text-black transition-all"
+        className="p-2 rounded-full bg-gray-800 dark:bg-gray-200 text-white dark:text-black transition-all duration-300 hover:scale-110 hover:shadow-lg"
       >
         {darkMode ? <Sun size={24} /> : <Moon size={24} />}
       </button>
+
+      {/* منوی موبایل */}
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 w-full bg-gray-900 text-white flex flex-col items-center py-5 space-y-3 sm:hidden z-50">
+          {["Home", "About", "Services", "Skills", "Projects", "Blog", "Certificates", "Contact"].map((item, index) => (
+            <Link key={index} className="text-white hover:text-blue-500 transition-all duration-300" href={`#${item.toLowerCase()}`}>{item}</Link>
+          ))}
+        </div>
+      )}
     </Navbar>
   );
 }

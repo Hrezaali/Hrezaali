@@ -8,30 +8,26 @@ const roboto = Roboto({ subsets: ["latin"], weight: "400" });
 
 export default function AboutMe({ id }) {
   return (
-    <section id={id} className="relative w-ful h-screen flex flex-col items-center justify-center p-24 z-10">
-      <div className="flex flex-col md:flex-row items-center justify-center gap-24 w-full max-w-8xl">
+    <section id={id} className="relative w-full h-screen flex flex-col items-center justify-center px-6 py-24 z-10">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12 w-full max-w-7xl">
         {/* نمایش GIF */}
-        <div className="w-full md:w-[400px]">
+        <div className="w-full max-w-[300px] md:max-w-[400px]">
           <Image
             src="/images/developers.gif"
             alt="Developer Animation"
             width={400}
             height={400}
-            className="rounded-lg shadow-lg max-w-full h-auto"
+            className="rounded-lg shadow-lg object-cover w-full h-auto"
           />
         </div>
 
         {/* متن توضیحی */}
-        <div className="text-center justify-center md:text-left mt-8 md:mt-0 md:w-[1000px]">
-          <h2
-            className={`text-center text-4xl md:text-5xl font-extrabold ${roboto.className} text-purple-600 dark:text-white-300`}
-          >
+        <div className="text-center md:text-left mt-8 md:mt-0 md:w-[60%]">
+          <h2 className={`text-3xl md:text-5xl font-extrabold ${roboto.className} text-purple-600 dark:text-gray-300`}>
             About Me
           </h2>
-          <p
-            className={`text-center mt-4 text-lg md:text-xl leading-relaxed text-black-300 ${poppins.className} tracking-wide dark:text-white-200`}
-          >
-            <span className="font-bold text-4xl text-black-800 dark:text-purple-400">
+          <p className={`mt-4 text-base md:text-xl leading-relaxed text-gray-600 dark:text-gray-200 ${poppins.className} tracking-wide`}>
+            <span className="font-bold text-2xl md:text-4xl text-gray-800 dark:text-purple-400">
               Junior Front-End Developer | Next.js Specialist
             </span>
             <br />
@@ -44,10 +40,10 @@ export default function AboutMe({ id }) {
           </p>
 
           {/* دکمه برای نمایش بیشتر */}
-          <div className="mt-6 text-center">
+          <div className="mt-6 text-center md:text-left">
             <Link
               href="#contact"
-              className="px-6 py-3 rounded-lg bg-green-600 hover:bg-purple-500 transition-all duration-300 text-lg font-semibold dark:bg-yellow-500 dark:hover:bg-yellow-400"
+              className="inline-block px-6 py-3 rounded-lg bg-green-600 hover:bg-purple-500 transition-all duration-300 text-lg font-semibold dark:bg-yellow-500 dark:hover:bg-yellow-400"
             >
               Let's Connect
             </Link>

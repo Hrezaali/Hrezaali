@@ -47,18 +47,19 @@ const ContactForm = () => {
 
     if (response.ok) {
       alert("Your message has been sent!");
+      setFormData({ name: "", email: "", message: "" });
     } else {
       alert("Error sending message");
     }
   };
 
   return (
-    <div className="flex items-center justify-center text-center w-full">
-      <div className="flex flex-col">
-        <div className="text-6xl font-extrabold text-gray-900 dark:text-white py-4">
+    <div className="flex flex-col md:flex-row items-center justify-center w-full px-6 gap-12">
+      <div className="flex flex-col text-center md:text-left">
+        <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-gray-200 py-4">
           Let's Connect!
-        </div>
-        <div className="max-w-2xl min-h-[50vh] flex items-center justify-center text-center text-gray-900 dark:text-white leading-relaxed text-2xl md:text-3xl font-bold px-12 py-8 rounded-lg shadow-lg">
+        </h2>
+        <div className="max-w-2xl min-h-[50vh] flex items-center justify-center text-gray-900 dark:text-gray-200 leading-relaxed text-xl md:text-2xl font-bold px-6 py-8 rounded-lg shadow-lg">
           <p className="whitespace-pre-wrap break-words">
             Feel free to reach out! I'm always excited to connect with like-minded
             professionals and explore new opportunities. Whether you have a
@@ -72,7 +73,7 @@ const ContactForm = () => {
       {/* Form */}
       <form
         onSubmit={handleSubmit}
-        className="max-w-2xl w-full p-8 text-white shadow-md rounded-lg bg-gray-800"
+        className="max-w-2xl w-full p-8 text-gray-200 shadow-md rounded-lg bg-gray-800"
       >
         {/* Name */}
         <div className="mb-6">
@@ -86,7 +87,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Enter your name"
-            className="w-full px-4 py-3 border border-gray-400 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-white"
+            className="w-full px-4 py-3 border border-gray-600 rounded-lg text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           {errors.name && <p className="text-lime-400 text-sm">{errors.name}</p>}
         </div>
@@ -103,7 +104,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="Enter your email"
-            className="w-full px-4 py-3 border border-gray-400 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-white"
+            className="w-full px-4 py-3 border border-gray-600 rounded-lg text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           {errors.email && <p className="text-lime-400 text-sm">{errors.email}</p>}
         </div>
@@ -119,12 +120,10 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleChange}
             placeholder="Write your message..."
-            className="w-full px-4 py-3 border border-gray-400 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-white"
+            className="w-full px-4 py-3 border border-gray-600 rounded-lg text-gray-900 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
             rows="6"
           />
-          {errors.message && (
-            <p className="text-lime-400 text-sm">{errors.message}</p>
-          )}
+          {errors.message && <p className="text-lime-400 text-sm">{errors.message}</p>}
         </div>
 
         {/* Submit Button */}
@@ -132,7 +131,9 @@ const ContactForm = () => {
           type="submit"
           disabled={!isFormValid}
           className={`w-full py-3 px-6 rounded-lg transition duration-300 ${
-            isFormValid ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-500 cursor-not-allowed"
+            isFormValid
+              ? "bg-blue-500 hover:bg-blue-600"
+              : "bg-gray-600 opacity-50 cursor-not-allowed"
           }`}
         >
           Send
