@@ -9,7 +9,7 @@ export default async function handler(req, res) {
       service: 'gmail',
       auth: {
         user: process.env.hassanrezaali.dev,  // ایمیل خود را در محیط‌های Vercel ذخیره کنید
-        pass: process.env.Amirali.babajoni1396,  // پسورد ایمیل
+        pass: process.env.Atalmataltotoleh,  // پسورد ایمیل
       },
     });
 
