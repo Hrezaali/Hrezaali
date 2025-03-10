@@ -6,7 +6,7 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  } from "@heroui/react";
+} from "@heroui/react";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
 export const AcmeLogo = () => {
@@ -40,6 +40,12 @@ export default function AppNavbar() {
     document.documentElement.classList.toggle("dark");
     localStorage.setItem("theme", newTheme);
   };
+
+  // این تابع برای بستن منو بعد از انتخاب یک گزینه است
+  const handleMenuItemClick = () => {
+    setIsMenuOpen(false); // بستن منو بعد از کلیک
+  };
+
   return (
     <Navbar className="fixed top-0 left-0 w-full bg-[rgba(0,0,0,0.8)] text-white z-50">
       <NavbarContent justify="start">
@@ -74,7 +80,14 @@ export default function AppNavbar() {
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-gray-900 text-white flex flex-col items-center py-5 space-y-3 sm:hidden z-50">
           {["Home", "About", "Services", "Skills", "Certificates", "Contact"].map((item, index) => (
-            <Link key={index} className="text-white hover:text-blue-500 transition-all duration-300" href={`#${item.toLowerCase()}`}>{item}</Link>
+            <Link 
+              key={index} 
+              className="text-white hover:text-blue-500 transition-all duration-300" 
+              href={`#${item.toLowerCase()}`}
+              onClick={handleMenuItemClick} // بستن منو بعد از کلیک روی هر گزینه
+            >
+              {item}
+            </Link>
           ))}
         </div>
       )}
