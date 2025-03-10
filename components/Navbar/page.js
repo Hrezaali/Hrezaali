@@ -41,9 +41,14 @@ export default function AppNavbar() {
     localStorage.setItem("theme", newTheme);
   };
 
-  // این تابع برای بستن منو بعد از انتخاب یک گزینه است
-  const handleMenuItemClick = () => {
-    setIsMenuOpen(false); // بستن منو بعد از کلیک
+  const handleLinkClick = (id) => {
+    // بستن منوی همبرگری
+    setIsMenuOpen(false);
+    // اسکرول به بخش مربوطه
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -63,7 +68,13 @@ export default function AppNavbar() {
       <NavbarContent className="hidden sm:flex gap-5">
         {["Home", "About", "Services", "Skills", "Certificates", "Contact"].map((item, index) => (
           <NavbarItem key={index}>
-            <Link className="text-white hover:text-blue-500 transition-all duration-300" href={`#${item.toLowerCase()}`}>{item}</Link>
+            <Link
+              className="text-white hover:text-blue-500 transition-all duration-300"
+              href={`#${item.toLowerCase()}`}
+              onClick={() => handleLinkClick(item.toLowerCase())}
+            >
+              {item}
+            </Link>
           </NavbarItem>
         ))}
       </NavbarContent>
@@ -80,11 +91,11 @@ export default function AppNavbar() {
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-gray-900 text-white flex flex-col items-center py-5 space-y-3 sm:hidden z-50">
           {["Home", "About", "Services", "Skills", "Certificates", "Contact"].map((item, index) => (
-            <Link 
-              key={index} 
-              className="text-white hover:text-blue-500 transition-all duration-300" 
+            <Link
+              key={index}
+              className="text-white hover:text-blue-500 transition-all duration-300"
               href={`#${item.toLowerCase()}`}
-              onClick={handleMenuItemClick} // بستن منو بعد از کلیک روی هر گزینه
+              onClick={() => handleLinkClick(item.toLowerCase())}
             >
               {item}
             </Link>
