@@ -18,6 +18,7 @@ export default function AboutMe({ id }) {
             width={400}
             height={400}
             className="rounded-lg shadow-lg object-cover w-full h-auto"
+            unoptimized
           />
         </div>
 

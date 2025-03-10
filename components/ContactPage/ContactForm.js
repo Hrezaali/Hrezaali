@@ -36,13 +36,13 @@ const ContactForm = () => {
       return;
     }
 
-    // Send request to the server
-    const response = await fetch("@/api/sendEmail.js", {
+    // Send request to Formsubmit
+    const response = await fetch("https://formsubmit.co/hrezaalidev@gmail.com", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Accept": "application/json",
       },
-      body: JSON.stringify(formData),
+      body: new URLSearchParams(formData), // Send form data as URLSearchParams
     });
 
     if (response.ok) {
