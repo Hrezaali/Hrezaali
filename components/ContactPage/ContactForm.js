@@ -197,7 +197,7 @@ const ContactForm = () => {
     });
 
     if (response.ok) {
-      alert("Your message has been sent! Please check your email for confirmation.");
+      alert("Your message has been sent!");
       
       // بعد از تأیید کاربر مجدداً امکان ارسال بده
       setTimeout(() => {
