@@ -55,7 +55,7 @@ export default function AppNavbar() {
       </button>
       {/* لینک‌های منو در حالت دسکتاپ */}
       <NavbarContent className="hidden sm:flex gap-5">
-        {["Home", "About", "Services", "Skills", "Projects", "Blog", "Certificates", "Contact"].map((item, index) => (
+        {["Home", "About", "Services", "Skills", "Certificates", "Contact"].map((item, index) => (
           <NavbarItem key={index}>
             <Link className="text-white hover:text-blue-500 transition-all duration-300" href={`#${item.toLowerCase()}`}>{item}</Link>
           </NavbarItem>
