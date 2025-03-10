@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import {
   Navbar,
@@ -7,7 +6,7 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-} from "@heroui/react";
+  } from "@heroui/react";
 import { Sun, Moon, Menu, X } from "lucide-react";
 
 export const AcmeLogo = () => {
@@ -41,7 +40,6 @@ export default function AppNavbar() {
     document.documentElement.classList.toggle("dark");
     localStorage.setItem("theme", newTheme);
   };
-
   return (
     <Navbar className="fixed top-0 left-0 w-full bg-[rgba(0,0,0,0.8)] text-white z-50">
       <NavbarContent justify="start">
@@ -55,7 +53,6 @@ export default function AppNavbar() {
       <button className="sm:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
-
       {/* لینک‌های منو در حالت دسکتاپ */}
       <NavbarContent className="hidden sm:flex gap-5">
         {["Home", "About", "Services", "Skills", "Projects", "Blog", "Certificates", "Contact"].map((item, index) => (

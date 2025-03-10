@@ -11,9 +11,9 @@ export default function Home() {
 
   return (
     <>
-        <Introduce id="introduce" />
+        <Introduce id="home" />
         <ProfilePicture/>
-        <Introduce2 id="introduce2" />
+        <Introduce2/>
         <AboutMe id="about" />
         <Services id="services" />
         <MySkills id="skills" />
