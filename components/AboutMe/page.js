@@ -40,14 +40,14 @@ export default function AboutMe({ id }) {
           </p>
 
           {/* دکمه برای نمایش بیشتر */}
-          <div  className="relative mt-6 text-center md:text-left z-10">
+          <div className="relative mt-6 text-center md:text-left z-50">
             <Link
               href="#contact"
-              className="inline-block px-6 py-3 rounded-lg bg-green-600 hover:bg-purple-500 transition-all duration-300 text-lg font-semibold dark:bg-yellow-500 dark:hover:bg-yellow-400"
-            >
-              Let's Connect
+               className="inline-block px-6 py-3 rounded-lg bg-green-600 hover:bg-purple-500 transition-all duration-300 text-lg font-semibold dark:bg-yellow-500 dark:hover:bg-yellow-400 cursor-pointer hidden md:inline-block"
+  >
+                 Let's Connect
             </Link>
-          </div>
+           </div>
         </div>
       </div>
     </section>
