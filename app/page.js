@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ScrollToTop from '@/components/ScrollToTop';
 import Introduce from '../components/Introduce/page';
 import ProfilePicture from '@/components/ProfilePicture';
 import Introduce2 from "@/components/Introduce2/page";
@@ -11,6 +11,7 @@ export default function Home() {
 
   return (
     <>
+        <ScrollToTop/> 
         <Introduce id="home" />
         <ProfilePicture/>
         <Introduce2/>
