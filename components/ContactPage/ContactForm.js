@@ -37,7 +37,7 @@ const ContactForm = () => {
     }
 
     // Send request to the server
-    const response = await fetch("/api/sendEmail.js", {
+    const response = await fetch("@/api/sendEmail.js", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
