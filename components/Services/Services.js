@@ -90,7 +90,7 @@ export default function Services({ id }) {
               style={{ color: "transparent" }}
             />
           </div>
-          <h1 className="text-2xl text-center font-bold p-2">Performance Optimize</h1>
+          <h1 className="text-2xl text-center font-bold p-2">Performance Optimization</h1>
           <p className="text-center text-lg p-2">
             Optimize websites and applications to deliver fast and efficient performance.
           </p>
