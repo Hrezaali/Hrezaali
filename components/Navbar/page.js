@@ -73,7 +73,7 @@ export default function AppNavbar() {
       {/* منوی موبایل */}
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-gray-900 text-white flex flex-col items-center py-5 space-y-3 sm:hidden z-50">
-          {["Home", "About", "Services", "Skills", "Projects", "Blog", "Certificates", "Contact"].map((item, index) => (
+          {["Home", "About", "Services", "Skills", "Certificates", "Contact"].map((item, index) => (
             <Link key={index} className="text-white hover:text-blue-500 transition-all duration-300" href={`#${item.toLowerCase()}`}>{item}</Link>
           ))}
         </div>
