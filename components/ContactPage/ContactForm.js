@@ -202,7 +202,7 @@ const ContactForm = () => {
       // بعد از تأیید کاربر مجدداً امکان ارسال بده
       setTimeout(() => {
         setIsAwaitingConfirmation(false); // فعال کردن دوباره دکمه بعد از 60 ثانیه
-      }, 50000); // یک دقیقه محدودیت ارسال مجدد
+      }, 5000); // یک دقیقه محدودیت ارسال مجدد
     } else {
       alert("Error sending message");
       setIsAwaitingConfirmation(false); // در صورت خطا، دوباره دکمه را فعال کن
