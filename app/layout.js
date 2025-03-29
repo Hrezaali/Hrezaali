@@ -3,6 +3,7 @@ import "./globals.css";
 import Providers from "../components/Providers/Providers";
 import Navbar from "../components/Navbar/page";
 import ParticlesBackground from "../components/ParticlesBackground";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`relative overflow-y-auto min-h-screen ${geistSans.variable} ${geistMono.variable}`}>
+      <SpeedInsights/>
         {/* افکت ذرات در پس‌زمینه */}
         <div className="fixed inset-0 -z-1">
           <ParticlesBackground />
