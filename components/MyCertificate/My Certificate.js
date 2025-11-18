@@ -19,6 +19,15 @@ const MyCertificate = ({ id }) => {
           className="w-full h-auto object-cover transition-opacity duration-500 hover:opacity-90"
         />
       </div>
+      <div className="max-w-lg bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden p-4 transition-transform duration-500 md:hover:scale-105 md:hover:rotate-3">
+        <Image
+          src="/images/Helsinki.png"
+          alt="certificate"
+          width={1000}
+          height={1000}
+          className="w-full h-auto object-cover transition-opacity duration-500 hover:opacity-90"
+        />
+      </div>
     </div>
   );
 };
