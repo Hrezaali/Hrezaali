@@ -37,7 +37,7 @@ export default function AboutMe({ id }) {
             MongoDB, and Mongoose, I create intuitive and responsive front-end interfaces while ensuring robust 
             and secure back-end systems. I focus on writing clean, maintainable code and prioritize performance, 
             reliability, and scalability in every project. Collaboration and communication are integral to my process, 
-            and I’m committed to delivering solutions that exceed expectations and provide long-term value.
+            and I&apos;m committed to delivering solutions that exceed expectations and provide long-term value.
           </p>
 
           {/* دکمه برای نمایش بیشتر */}
@@ -46,7 +46,7 @@ export default function AboutMe({ id }) {
               href="#contact"
                className="inline-block px-6 py-3 rounded-lg bg-green-600 hover:bg-purple-500 transition-all duration-300 text-lg font-semibold dark:bg-yellow-500 dark:hover:bg-yellow-400 cursor-pointer hidden md:inline-block"
   >
-                 Let's Connect
+                 Let&apos;s Connect
             </Link>
            </div>
         </div>

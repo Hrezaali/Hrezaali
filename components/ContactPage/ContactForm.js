@@ -67,14 +67,14 @@ const ContactForm = () => {
     <div className="flex flex-col md:flex-row items-center justify-center w-full px-6 gap-12">
       <div className="flex flex-col text-center md:text-left">
         <h2 className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-gray-200 py-4">
-          Let's Connect!
+          Let&apos;s Connect!
         </h2>
         <div className="max-w-2xl min-h-[50vh] flex items-center justify-center text-gray-900 dark:text-gray-200 leading-relaxed text-xl md:text-2xl font-bold px-6 py-8 rounded-lg shadow-lg">
           <p className="whitespace-pre-wrap break-words">
-            Feel free to reach out! I'm always excited to connect with like-minded
+            Feel free to reach out! I&apos;m always excited to connect with like-minded
             professionals and explore new opportunities. Whether you have a
-            project in mind or want to collaborate on innovative ideas, let's work
-            together to create something amazing. Send me a message, and let's
+            project in mind or want to collaborate on innovative ideas, let&apos;s work
+            together to create something amazing. Send me a message, and let&apos;s
             start the conversation!
           </p>
         </div>
